@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Advancements on Minecraft Technical Guide</title>
-    <link>http://calmbit.github.io/minecraft_technical_guide/advancements/index.xml</link>
+    <link>https://calmbit.github.io/minecraft_technical_guide/advancements/index.xml</link>
     <description>Recent content in Advancements on Minecraft Technical Guide</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://calmbit.github.io/minecraft_technical_guide/advancements/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://calmbit.github.io/minecraft_technical_guide/advancements/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Introduction</title>
-      <link>http://calmbit.github.io/minecraft_technical_guide/advancements/introduction/</link>
+      <link>https://calmbit.github.io/minecraft_technical_guide/advancements/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://calmbit.github.io/minecraft_technical_guide/advancements/introduction/</guid>
+      <guid>https://calmbit.github.io/minecraft_technical_guide/advancements/introduction/</guid>
       <description>
 
 &lt;p&gt;The Advancements system is a recently added feature that supersedes the previous Achievements system, giving mapmakers (and modders) more flexibility within the Vanilla framework. Advancements can serve an assortment of purposes, including:&lt;/p&gt;
@@ -57,10 +57,10 @@
     
     <item>
       <title>Display</title>
-      <link>http://calmbit.github.io/minecraft_technical_guide/advancements/display/</link>
+      <link>https://calmbit.github.io/minecraft_technical_guide/advancements/display/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://calmbit.github.io/minecraft_technical_guide/advancements/display/</guid>
+      <guid>https://calmbit.github.io/minecraft_technical_guide/advancements/display/</guid>
       <description>
 
 &lt;p&gt;The &lt;code&gt;display&lt;/code&gt; object is, as the name implies, pivotal for displaying the advancement in the advancement window, along with any other UI component requiring information about the advancement (such as a toast, another form of notification etc.)&lt;/p&gt;
