@@ -56,6 +56,46 @@
     </item>
     
     <item>
+      <title>Terminology</title>
+      <link>https://calmbit.github.io/minecraft_technical_guide/advancements/terminology/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://calmbit.github.io/minecraft_technical_guide/advancements/terminology/</guid>
+      <description>
+
+&lt;p&gt;In order to dicuss advancements in detail, some basic terms will need to be defined - this section is for that exactly. Suspect terms (those with complex or otherwise incomprehensible meaning) will be defined here, and will always contain links to their respective entries.&lt;/p&gt;
+
+&lt;h2 id=&#34;a-id-advancement-tree-a-advancement-tree&#34;&gt;&lt;a id=&#34;advancement_tree&#34;&gt;&lt;/a&gt;Advancement Tree&lt;/h2&gt;
+
+&lt;p&gt;An &lt;strong&gt;advancement tree&lt;/strong&gt; is a set of advancements that are descended or ascended from each other, extending from a singular &lt;a href=&#34;#root_advancement&#34;&gt;root advancement&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;a-id-fully-qualified-path-a-fully-qualified-path&#34;&gt;&lt;a id=&#34;fully_qualified_path&#34;&gt;&lt;/a&gt;Fully Qualified Path&lt;/h2&gt;
+
+&lt;p&gt;An advancement&amp;rsquo;s &lt;strong&gt;fully qualified path&lt;/strong&gt; is the full text of the advancement&amp;rsquo;s resource location, including its namespace and sub-folders (e.g. &lt;code&gt;namespace:folder_one/folder_two/advancement&lt;/code&gt;). These paths are used as definitive, unique locators for several purposes, including defining an advancement&amp;rsquo;s &lt;a href=&#34;https://calmbit.github.io/minecraft_technical_guide/advancements/parent&#34;&gt;parent&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;a-id-namespace-a-namespace&#34;&gt;&lt;a id=&#34;namespace&#34;&gt;&lt;/a&gt;Namespace&lt;/h2&gt;
+
+&lt;p&gt;A &lt;strong&gt;namespace&lt;/strong&gt; is the overarching label for a group of advancements. For player-made advancements, the namespace is the name of the folder holding the JSON files for the advancements. Official advancements have the namespace &lt;code&gt;minecraft&lt;/code&gt; (e.g. &lt;code&gt;minecraft:diamonds&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;A namespace can be sub-divided into folders (in any number of ways), but these &lt;em&gt;do not&lt;/em&gt; affect the namespace title, but rather the &lt;a href=&#34;#fully_qualified_path&#34;&gt;fully qualified path&lt;/a&gt; of the advancement.&lt;/p&gt;
+
+&lt;div class=&#34;notices warning&#34; &gt;&lt;p&gt;It&amp;rsquo;s not advised to infringe on the official namespace - this hasn&amp;rsquo;t been tested, but chances are it will cause far more confusion than it&amp;rsquo;s worth.&lt;/p&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;a-id-root-advancement-a-root-advancement&#34;&gt;&lt;a id=&#34;root_advancement&#34;&gt;&lt;/a&gt;Root Advancement&lt;/h2&gt;
+
+&lt;p&gt;The &lt;strong&gt;root advancement&lt;/strong&gt; is the first advancement in a particular &lt;a href=&#34;#advancement_tree&#34;&gt;advancement tree&lt;/a&gt;. When its criteria are fufilled, a new tab is added to the advancement window, bearing both its &lt;code&gt;name&lt;/code&gt; and its &lt;code&gt;icon&lt;/code&gt; properties. A &lt;a href=&#34;#namespace&#34;&gt;namespace&lt;/a&gt; can have more than one root advancement, but this could be undesirable for a number of reasons.&lt;/p&gt;
+
+&lt;h2 id=&#34;a-id-toast-a-toast&#34;&gt;&lt;a id=&#34;toast&#34;&gt;&lt;/a&gt;Toast&lt;/h2&gt;
+
+&lt;p&gt;A &lt;strong&gt;toast&lt;/strong&gt; is defined as a &amp;ldquo;non modal, unobtrusive window element used to display brief, auto-expiring windows of information to a user.&amp;rdquo; For the purposes of the advancements system, a toast looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://calmbit.github.io/minecraft_technical_guide/advancements/toast.png&#34; alt=&#34;An example of a toast&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Display</title>
       <link>https://calmbit.github.io/minecraft_technical_guide/advancements/display/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -140,6 +180,37 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Parent</title>
+      <link>https://calmbit.github.io/minecraft_technical_guide/advancements/parent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://calmbit.github.io/minecraft_technical_guide/advancements/parent/</guid>
+      <description>
+
+&lt;p&gt;The &lt;code&gt;parent&lt;/code&gt; property is a string, listing the name of the advancement this advancement extends from (i.e. the literal &amp;ldquo;parent&amp;rdquo; of the advancement in the &lt;a href=&#34;https://calmbit.github.io/minecraft_technical_guide/advancements/terminology/#advancement_tree&#34;&gt;tree&lt;/a&gt;).&lt;/p&gt;
+
+&lt;div class=&#34;notices note&#34; &gt;&lt;p&gt;Technically this &lt;em&gt;is&lt;/em&gt; an optional property, but any advancement &lt;em&gt;without&lt;/em&gt; this property will be interepreted as a &lt;a href=&#34;https://calmbit.github.io/minecraft_technical_guide/advancements/terminology/#root_advancement&#34;&gt;root advancement&lt;/a&gt;, which consequently require the absence of this property to be recognized.&lt;/p&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;    &amp;quot;parent&amp;quot;: &amp;quot;minecraft:story/iron_tools&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Criteria</title>
+      <link>https://calmbit.github.io/minecraft_technical_guide/advancements/criteria/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://calmbit.github.io/minecraft_technical_guide/advancements/criteria/</guid>
+      <description>&lt;p&gt;The &lt;code&gt;criteria&lt;/code&gt; object is the mechanical (and logistical) underpinning of the entire advancements system. It allows you to define a set of (as the name implies) criteria for the advancement&amp;rsquo;s obtainment.&lt;/p&gt;
 </description>
     </item>
     

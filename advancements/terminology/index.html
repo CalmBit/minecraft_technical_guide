@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
   <head>
@@ -11,7 +10,7 @@
     <link rel="shortcut icon" href="https://calmbit.github.io/minecraft_technical_guide/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Advancements Basics</title>
+    <title>Terminology</title>
     <link href="https://calmbit.github.io/minecraft_technical_guide/css/nucleus.css" rel="stylesheet">
     <link href="https://calmbit.github.io/minecraft_technical_guide/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://calmbit.github.io/minecraft_technical_guide/css/hybrid.css" rel="stylesheet">
@@ -26,7 +25,7 @@
     
 
   </head>
-  <body class="" data-url="/advancements/">
+  <body class="" data-url="/advancements/terminology/">
     
     <nav id="sidebar">
   <div id="header-wrapper">
@@ -116,7 +115,7 @@
       
       
 
-      <li class="dd-item active parent" data-nav-id="/advancements/">
+      <li class="dd-item  parent" data-nav-id="/advancements/">
         <a href="https://calmbit.github.io/minecraft_technical_guide/advancements/">
           <span>
             
@@ -135,7 +134,7 @@
               </a>
             </li>
           
-            <li class="dd-item " data-nav-id="/advancements/terminology/">
+            <li class="dd-item active" data-nav-id="/advancements/terminology/">
               <a href="https://calmbit.github.io/minecraft_technical_guide/advancements/terminology/">
                 <span>Terminology     </i></span>
               </a>
@@ -194,29 +193,55 @@
                   
                     
                     
+                <a href="https://calmbit.github.io/minecraft_technical_guide/advancements/" itemprop="url"><span itemprop="title">Advancements Basics</span></a> <i class="fa fa-angle-right"></i>
+                    
                   
                 
-                <span itemprop="title"> Advancements Basics</span>
+                <span itemprop="title"> Terminology</span>
               </div>
               
 
             </div>
             
-              <div id="chapter">
-            
               <div id="body-inner">
+                
+                <h1>Terminology</h1>
                 
 
 
 
-<h1 id="advancements-basics">Advancements Basics</h1>
+<p>In order to dicuss advancements in detail, some basic terms will need to be defined - this section is for that exactly. Suspect terms (those with complex or otherwise incomprehensible meaning) will be defined here, and will always contain links to their respective entries.</p>
 
-<p><strong>Advancing</strong> your knowledge.</p>
+<h2 id="a-id-advancement-tree-a-advancement-tree"><a id="advancement_tree"></a>Advancement Tree</h2>
+
+<p>An <strong>advancement tree</strong> is a set of advancements that are descended or ascended from each other, extending from a singular <a href="#root_advancement">root advancement</a>.</p>
+
+<h2 id="a-id-fully-qualified-path-a-fully-qualified-path"><a id="fully_qualified_path"></a>Fully Qualified Path</h2>
+
+<p>An advancement&rsquo;s <strong>fully qualified path</strong> is the full text of the advancement&rsquo;s resource location, including its namespace and sub-folders (e.g. <code>namespace:folder_one/folder_two/advancement</code>). These paths are used as definitive, unique locators for several purposes, including defining an advancement&rsquo;s <a href="https://calmbit.github.io/minecraft_technical_guide/advancements/parent">parent</a>.</p>
+
+<h2 id="a-id-namespace-a-namespace"><a id="namespace"></a>Namespace</h2>
+
+<p>A <strong>namespace</strong> is the overarching label for a group of advancements. For player-made advancements, the namespace is the name of the folder holding the JSON files for the advancements. Official advancements have the namespace <code>minecraft</code> (e.g. <code>minecraft:diamonds</code>).</p>
+
+<p>A namespace can be sub-divided into folders (in any number of ways), but these <em>do not</em> affect the namespace title, but rather the <a href="#fully_qualified_path">fully qualified path</a> of the advancement.</p>
+
+<div class="notices warning" ><p>It&rsquo;s not advised to infringe on the official namespace - this hasn&rsquo;t been tested, but chances are it will cause far more confusion than it&rsquo;s worth.</p>
+</div>
+
+
+<h2 id="a-id-root-advancement-a-root-advancement"><a id="root_advancement"></a>Root Advancement</h2>
+
+<p>The <strong>root advancement</strong> is the first advancement in a particular <a href="#advancement_tree">advancement tree</a>. When its criteria are fufilled, a new tab is added to the advancement window, bearing both its <code>name</code> and its <code>icon</code> properties. A <a href="#namespace">namespace</a> can have more than one root advancement, but this could be undesirable for a number of reasons.</p>
+
+<h2 id="a-id-toast-a-toast"><a id="toast"></a>Toast</h2>
+
+<p>A <strong>toast</strong> is defined as a &ldquo;non modal, unobtrusive window element used to display brief, auto-expiring windows of information to a user.&rdquo; For the purposes of the advancements system, a toast looks like this:</p>
+
+<p><img src="https://calmbit.github.io/minecraft_technical_guide/advancements/toast.png" alt="An example of a toast" /></p>
 
 
       
-      
-        </div> 
       
       </div>
     </div>
@@ -225,8 +250,8 @@
 
     <div id="navigation">
         
-        <a class="nav nav-prev" href="https://calmbit.github.io/minecraft_technical_guide/frontmatter"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="https://calmbit.github.io/minecraft_technical_guide/advancements/introduction" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="https://calmbit.github.io/minecraft_technical_guide/advancements/introduction"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="https://calmbit.github.io/minecraft_technical_guide/advancements/display" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>
@@ -248,5 +273,4 @@
 
   </body>
 </html>
-
 
