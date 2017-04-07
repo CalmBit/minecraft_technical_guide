@@ -1,5 +1,5 @@
 languageCode = "en-us"
 title = "Minecraft Technical Guide"
-baseURL = "http://calmbit.github.io/minecraft_technical_guide/"
+baseURL = "https://calmbit.github.io/minecraft_technical_guide"
 theme = "hugo-theme-learn"
 canonifyURLs = true
