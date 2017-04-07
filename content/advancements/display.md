@@ -1,8 +1,8 @@
 +++
-weight = 2
+weight = 3
 title = "Display"
-prev = "/advancements/introduction"
-next = "/advancements"
+prev = "/advancements/terminology"
+next = "/advancements/parent"
 +++
 
 The `display` object is, as the name implies, pivotal for displaying the advancement in the advancement window, along with any other UI component requiring information about the advancement (such as a toast, another form of notification etc.)

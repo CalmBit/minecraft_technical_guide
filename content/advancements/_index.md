@@ -1,12 +1,12 @@
 +++
 weight = 1
-title = "Advancements"
+title = "Advancements Basics"
 chapter = true
 icon = "<b>1. </b>"
 prev = "/frontmatter"
 next = "/advancements/introduction"
 +++
 
-# Advancements
+# Advancements Basics
 
 **Advancing** your knowledge.

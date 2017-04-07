@@ -2,7 +2,7 @@
 weight = 1
 title = "Introduction"
 prev = "/advancements"
-next = "/advancements/display"
+next = "/advancements/terminology"
 +++
 
 
