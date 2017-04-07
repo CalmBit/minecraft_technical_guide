@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Minecraft Technical Guide</title>
+    <link>http://calmbit.github.io/minecraft_technical_guide/index.xml</link>
+    <description>Recent content on Minecraft Technical Guide</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://calmbit.github.io/minecraft_technical_guide/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Introduction</title>
+      <link>http://calmbit.github.io/minecraft_technical_guide/advancements/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://calmbit.github.io/minecraft_technical_guide/advancements/introduction/</guid>
+      <description>
+
+&lt;p&gt;The Advancements system is a recently added feature that supersedes the previous Achievements system, giving mapmakers (and modders) more flexibility within the Vanilla framework. Advancements can serve an assortment of purposes, including:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;quest-lines&lt;/li&gt;
+&lt;li&gt;keeping track of progressions&lt;/li&gt;
+&lt;li&gt;introducing fun challenges into vanilla survival&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The files are a little complex, but we&amp;rsquo;ll discuss each component in depth, and make it a little less scary.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-format&#34;&gt;The Format&lt;/h2&gt;
+
+&lt;p&gt;Advancements, being so extremely flexible, utilize &lt;a href=&#34;http://www.json.org/&#34;&gt;JSON&lt;/a&gt; as an encoding format. They&amp;rsquo;re designed for a great deal of modularity, allowing for as few (or as many) options as necessary. A rudimentary advancement file looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;display&amp;quot;: {
+        &amp;quot;icon&amp;quot;: &amp;quot;minecraft:diamond&amp;quot;,
+        &amp;quot;title&amp;quot;: &amp;quot;Diamonds!&amp;quot;
+    },
+    &amp;quot;parent&amp;quot;: &amp;quot;minecraft:story/iron_tools&amp;quot;,
+    &amp;quot;criteria&amp;quot;: {
+        &amp;quot;diamond&amp;quot;: {
+            &amp;quot;trigger&amp;quot;: &amp;quot;minecraft:inventory_changed&amp;quot;,
+            &amp;quot;conditions&amp;quot;: {
+                &amp;quot;items&amp;quot;: [
+                    {
+                        &amp;quot;item&amp;quot;: &amp;quot;minecraft:diamond&amp;quot;
+                    }
+                ]
+            }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This particular advancement supersedes the &amp;ldquo;DIAMONDS!&amp;rdquo; achievement, working exactly the same.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Display</title>
+      <link>http://calmbit.github.io/minecraft_technical_guide/advancements/display/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://calmbit.github.io/minecraft_technical_guide/advancements/display/</guid>
+      <description>
+
+&lt;p&gt;The &lt;code&gt;display&lt;/code&gt; object is, as the name implies, pivotal for displaying the advancement in the advancement window, along with any other UI component requiring information about the advancement (such as a toast, another form of notification etc.)&lt;/p&gt;
+
+&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;    &amp;quot;display&amp;quot;: {
+        &amp;quot;icon&amp;quot;: &amp;quot;minecraft:diamond&amp;quot;,
+        &amp;quot;title&amp;quot;: &amp;quot;Diamonds!&amp;quot;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;property-list&#34;&gt;Property List&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Property&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Possible Values&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Optional?&lt;/th&gt;
+&lt;th&gt;Example&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;icon&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Specifies the block or item you want the advancement to use as an icon.&lt;/td&gt;
+&lt;td&gt;Any block or item ID&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;✘&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;icon&amp;quot;: &amp;quot;minecraft:diamond&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;frame&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Specifies the type of advancement (along with the frame the icon will use). Also alters the wording of the notification. If this property is omitted, the default frame is &lt;code&gt;task&lt;/code&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;task&lt;/code&gt;, &lt;code&gt;challenge&lt;/code&gt;, &lt;code&gt;goal&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;✔&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;frame&amp;quot;: &amp;quot;challenge&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;title&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The human-readable title of the advancement&lt;/td&gt;
+&lt;td&gt;Any string value&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;✘&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;title&amp;quot;: &amp;quot;Diamonds!&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;frame-gallery&#34;&gt;Frame Gallery&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Frame Identifier&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Image&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;task&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;../task_frame.png&#34; alt=&#34;Task Frame&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;challenge&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;../challenge_frame.png&#34; alt=&#34;Challenge Frame&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;goal&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;../goal_frame.png&#34; alt=&#34;Goal Frame&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://calmbit.github.io/minecraft_technical_guide/advancements/</loc>
+  </url>
+  
+  <url>
+    <loc>http://calmbit.github.io/minecraft_technical_guide/advancements/introduction/</loc>
+  </url>
+  
+  <url>
+    <loc>http://calmbit.github.io/minecraft_technical_guide/advancements/display/</loc>
+  </url>
+  
+  <url>
+    <loc>http://calmbit.github.io/minecraft_technical_guide/frontmatter/</loc>
+  </url>
+  
+  <url>
+    <loc>http://calmbit.github.io/minecraft_technical_guide/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
